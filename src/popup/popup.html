@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tab Archaeologist</title>
+  </head>
+  <body>
+    <main id="app" class="app">
+      <header class="app-header">
+        <div class="heading">
+          <h1>Tab Archaeologist</h1>
+          <p class="tagline">Local suggestions for related open tabs.</p>
+        </div>
+        <button id="analyze" class="button button-primary" type="button">Analyse tabs</button>
+      </header>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <section id="results" class="results" aria-label="Suggested tab groups" hidden></section>
+
+      <footer class="app-footer">
+        <span>Suggestions only. Tabs are unchanged.</span>
+        <span>Processed locally.</span>
+        <span id="version" class="version"></span>
+      </footer>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

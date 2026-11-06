@@ -1,0 +1,26 @@
+{
+  "name": "databases-and-cloud",
+  "notes": "Database reading and cloud deployment tabs, with unrelated tabs.",
+  "tabs": [
+    { "id": 1, "title": "PostgreSQL Indexing Guide", "url": "https://postgresql.org/docs/indexes" },
+    { "id": 2, "title": "SQLite Query Planner", "url": "https://sqlite.org/optoverview.html" },
+    { "id": 3, "title": "MySQL Database Indexes", "url": "https://dev.mysql.com/doc/indexes" },
+    { "id": 4, "title": "Database Index Design", "url": "https://use-the-index-luke.com/sql" },
+    { "id": 5, "title": "AWS S3 Storage Guide", "url": "https://docs.aws.amazon.com/s3/" },
+    { "id": 6, "title": "AWS Lambda Functions", "url": "https://docs.aws.amazon.com/lambda/" },
+    { "id": 7, "title": "Kubernetes Deployment", "url": "https://kubernetes.io/docs/deployment" },
+    { "id": 8, "title": "CSS Grid Layout", "url": "https://css-tricks.com/grid" },
+    { "id": 9, "title": "Coffee Brewing Guide", "url": "https://example.test/coffee" }
+  ],
+  "truth": {
+    "1": "databases",
+    "2": "databases",
+    "3": "databases",
+    "4": "databases",
+    "5": "cloud",
+    "6": "cloud",
+    "7": "cloud",
+    "8": "noise-css",
+    "9": "noise-coffee"
+  }
+}

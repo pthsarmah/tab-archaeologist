@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+web-ext-artifacts/
+*.zip
+evaluation/reports/*.json
+evaluation/reports/*.md
+!evaluation/reports/sample.md
+.DS_Store

@@ -1,0 +1,26 @@
+{
+  "name": "cross-domain-linux",
+  "notes": "Related kernel topics from several domains, plus React and one unrelated tab.",
+  "tabs": [
+    { "id": 1, "title": "Linux Kernel Memory Management", "url": "https://kernel.org/doc/html/mm/" },
+    { "id": 2, "title": "Linux Slab Allocator Internals", "url": "https://lwn.net/Articles/slab/" },
+    { "id": 3, "title": "Linux Memory Management Guide", "url": "https://linux.org/docs/mm/" },
+    { "id": 4, "title": "Linux Kernel Slab Allocators", "url": "https://kernelnewbies.org/slab" },
+    { "id": 5, "title": "Linux Memory Allocators", "url": "https://lwn.net/memory" },
+    { "id": 6, "title": "React Documentation", "url": "https://react.dev/learn" },
+    { "id": 7, "title": "React Hooks Reference", "url": "https://react.dev/reference/hooks" },
+    { "id": 8, "title": "React State Management", "url": "https://react.dev/state" },
+    { "id": 9, "title": "Python Tutorial", "url": "https://python.org/tutorial/" }
+  ],
+  "truth": {
+    "1": "linux-memory",
+    "2": "linux-memory",
+    "3": "linux-memory",
+    "4": "linux-memory",
+    "5": "linux-memory",
+    "6": "react",
+    "7": "react",
+    "8": "react",
+    "9": "noise-python"
+  }
+}

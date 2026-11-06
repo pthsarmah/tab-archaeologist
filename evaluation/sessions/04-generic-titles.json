@@ -1,0 +1,18 @@
+{
+  "name": "generic-titles",
+  "notes": "Generic page titles force the path channel to carry the grouping.",
+  "tabs": [
+    { "id": 1, "title": "Home", "url": "https://one.test/docs/linux/memory" },
+    { "id": 2, "title": "Documentation", "url": "https://two.test/docs/linux/kernel" },
+    { "id": 3, "title": "Home", "url": "https://three.test/blog/react/hooks" },
+    { "id": 4, "title": "Docs", "url": "https://four.test/blog/react/state" },
+    { "id": 5, "title": "Home", "url": "https://five.test/shop/cart" }
+  ],
+  "truth": {
+    "1": "linux",
+    "2": "linux",
+    "3": "react",
+    "4": "react",
+    "5": "noise-shop"
+  }
+}

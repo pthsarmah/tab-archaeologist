@@ -1,0 +1,33 @@
+{
+  "name": "tab-archaeologist",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Local, non-destructive tab grouping suggestions for Firefox and Chromium.",
+  "scripts": {
+    "build": "vite build --mode chromium && vite build --mode firefox && node scripts/finalize.mjs both",
+    "build:chromium": "vite build --mode chromium && node scripts/finalize.mjs chromium",
+    "build:firefox": "vite build --mode firefox && node scripts/finalize.mjs firefox",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "evaluate": "tsx evaluation/run.ts",
+    "evaluate:check": "npm run evaluate && node scripts/check-evaluation.mjs",
+    "lint:firefox": "web-ext lint --source-dir dist/firefox --warnings-as-errors",
+    "package": "npm run build && node scripts/package.mjs",
+    "verify": "npm run typecheck && npm test && npm run build && npm run lint:firefox"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@vitest/coverage-v8": "^5.1.0",
+    "fast-check": "^4.10.2",
+    "fflate": "^0.8.3",
+    "jsdom": "^27.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0",
+    "web-ext": "^10.8.0"
+  }
+}

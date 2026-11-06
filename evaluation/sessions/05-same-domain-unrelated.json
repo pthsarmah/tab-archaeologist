@@ -1,0 +1,20 @@
+{
+  "name": "same-domain-unrelated",
+  "notes": "All tabs share github.com; hostname alone must not create groups.",
+  "tabs": [
+    { "id": 1, "title": "Rust Programming Language", "url": "https://github.com/rust-lang/rust" },
+    { "id": 2, "title": "The Rust Book", "url": "https://github.com/rust-lang/book" },
+    { "id": 3, "title": "React Repository", "url": "https://github.com/facebook/react" },
+    { "id": 4, "title": "React Issues", "url": "https://github.com/facebook/react/issues" },
+    { "id": 5, "title": "CPython Repository", "url": "https://github.com/python/cpython" },
+    { "id": 6, "title": "Kubernetes Repository", "url": "https://github.com/kubernetes/kubernetes" }
+  ],
+  "truth": {
+    "1": "rust",
+    "2": "rust",
+    "3": "react",
+    "4": "react",
+    "5": "noise-python",
+    "6": "noise-kubernetes"
+  }
+}

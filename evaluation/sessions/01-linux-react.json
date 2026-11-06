@@ -1,0 +1,20 @@
+{
+  "name": "linux-and-react",
+  "notes": "Mixed kernel reading and React docs with one unrelated tab.",
+  "tabs": [
+    { "id": 1, "title": "Linux Kernel Memory Management", "url": "https://kernel.org/doc/html/mm/" },
+    { "id": 2, "title": "Understanding Slab Allocators", "url": "https://lwn.net/Articles/slab/" },
+    { "id": 3, "title": "Linux Slab Allocation", "url": "https://linux.org/docs/slab/" },
+    { "id": 4, "title": "React Documentation", "url": "https://react.dev/learn" },
+    { "id": 5, "title": "React Hooks Guide", "url": "https://react.dev/reference/hooks" },
+    { "id": 6, "title": "Python Tutorial", "url": "https://python.org/tutorial/" }
+  ],
+  "truth": {
+    "1": "linux-memory",
+    "2": "linux-memory",
+    "3": "linux-memory",
+    "4": "react",
+    "5": "react",
+    "6": "noise-python"
+  }
+}

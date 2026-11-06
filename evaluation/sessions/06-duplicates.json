@@ -1,0 +1,18 @@
+{
+  "name": "duplicates-and-skipped",
+  "notes": "Duplicate tabs should group; inaccessible and empty pages are skipped.",
+  "tabs": [
+    { "id": 1, "title": "Linux Kernel Documentation", "url": "https://kernel.org/doc/" },
+    { "id": 2, "title": "Linux Kernel Documentation", "url": "https://kernel.org/doc/" },
+    { "id": 3, "title": "React Documentation", "url": "https://react.dev/learn" },
+    { "id": 4, "title": "React Documentation", "url": "https://react.dev/learn" },
+    { "id": 5, "title": "Home", "url": "https://example.test/" },
+    { "id": 6, "title": "Untitled", "url": "https://example.test/" }
+  ],
+  "truth": {
+    "1": "linux-docs",
+    "2": "linux-docs",
+    "3": "react-docs",
+    "4": "react-docs"
+  }
+}

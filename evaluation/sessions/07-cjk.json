@@ -1,0 +1,20 @@
+{
+  "name": "cjk-tabs",
+  "notes": "Chinese titles require character-bigram fallback.",
+  "tabs": [
+    { "id": 1, "title": "内存管理", "url": "https://one.test/memory" },
+    { "id": 2, "title": "内存管理实践", "url": "https://two.test/memory/practice" },
+    { "id": 3, "title": "Linux 内核内存", "url": "https://three.test/linux/kernel" },
+    { "id": 4, "title": "React 文档", "url": "https://react.dev/learn" },
+    { "id": 5, "title": "React Hooks 指南", "url": "https://react.dev/hooks" },
+    { "id": 6, "title": "咖啡冲泡", "url": "https://example.test/coffee" }
+  ],
+  "truth": {
+    "1": "memory",
+    "2": "memory",
+    "3": "memory",
+    "4": "react",
+    "5": "react",
+    "6": "noise-coffee"
+  }
+}
