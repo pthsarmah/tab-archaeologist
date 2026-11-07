@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Tab Archaeologist",
+  "name": "Tab Archaeologist (Normal)",
   "description": "Suggests topic-based groups for open tabs. Local analysis only; browser groups are created only on explicit request.",
   "version": "0.1.0",
   "permissions": ["tabs"],
