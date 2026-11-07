@@ -11,6 +11,7 @@ export interface PopupUiState {
 export interface RenderActions {
   onOpenTab(tab: TabDocument): void;
   onCreateGroup(suggestion: Suggestion): void;
+  onCreateAllGroups(): void;
   onDismiss(id: string): void;
   onRestore(id: string): void;
   onStartRename(id: string): void;
@@ -213,6 +214,14 @@ export function renderResults(
       `${result.unclustered.length} unclustered · ${result.skipped.length} skipped`
   );
   container.append(summary);
+
+  if (active.length > 0) {
+    const bulkActions = element(doc, 'div', 'bulk-actions');
+    const createAll = button(doc, 'Create all browser groups', 'button button-primary');
+    createAll.addEventListener('click', () => actions.onCreateAllGroups());
+    bulkActions.append(createAll);
+    container.append(bulkActions);
+  }
 
   if (result.stats.analyzedCount === 0) {
     const note = element(doc, 'p', 'section-note', 'No analysable tabs were found in this window.');

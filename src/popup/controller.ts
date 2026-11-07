@@ -96,6 +96,51 @@ export function mountPopup(doc: Document, dependencies: PopupDependencies): Popu
         }
       );
     },
+    onCreateAllGroups: (): void => {
+      if (!dependencies.createGroup) {
+        setStatus('Native browser groups are unavailable in this browser.', 'error');
+        return;
+      }
+
+      const activeSuggestions = result?.suggestions.filter(
+        (suggestion) => !state.dismissed.has(suggestion.id)
+      ) ?? [];
+      if (activeSuggestions.length === 0) return;
+
+      const createAllButton = [...results.querySelectorAll('button')].find(
+        (button) => button.textContent === 'Create all browser groups'
+      );
+      if (createAllButton instanceof HTMLButtonElement) {
+        createAllButton.disabled = true;
+      }
+
+      void Promise.allSettled(
+        activeSuggestions.map((suggestion) => {
+          const title = state.renamed.get(suggestion.id) ?? suggestion.label;
+          return dependencies.createGroup!(suggestion.tabIds, title);
+        })
+      ).then((outcomes) => {
+        const failures = outcomes.filter((outcome) => outcome.status === 'rejected');
+        if (failures.length === 0) {
+          setStatus(
+            `Created ${activeSuggestions.length} browser group${
+              activeSuggestions.length === 1 ? '' : 's'
+            }.`,
+            'success'
+          );
+        } else {
+          const created = outcomes.length - failures.length;
+          setStatus(
+            `Created ${created} of ${activeSuggestions.length} browser groups. ${
+              failures[0]?.status === 'rejected' && failures[0].reason instanceof BrowserApiError
+                ? failures[0].reason.message
+                : 'Some browser groups could not be created.'
+            }`,
+            'error'
+          );
+        }
+      });
+    },
     onDismiss: (id: string): void => {
       state.dismissed.add(id);
       state.editingId = null;

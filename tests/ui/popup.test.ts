@@ -49,7 +49,7 @@ function emptyResult(): AnalysisResult {
   };
 }
 
-function setup() {
+function setup(createGroup?: (tabIds: number[], title: string) => Promise<void>) {
   document.body.innerHTML = `
     <button id="analyze" type="button"></button>
     <p id="status"></p>
@@ -66,10 +66,16 @@ function setup() {
     fetchTabs,
     analyze,
     openTab,
+    createGroup,
     version: '0.1.0'
   });
   controller.init();
   return { controller, openTab, analyze, fetchTabs };
+}
+
+function setupWithGroups() {
+  const createGroup = vi.fn(async () => undefined);
+  return { ...setup(createGroup), createGroup };
 }
 
 function buttonWithText(label: string): HTMLButtonElement {
@@ -124,6 +130,16 @@ describe('popup controller', () => {
     input.form?.dispatchEvent(new Event('submit', { bubbles: true, cancelable: true }));
     expect(document.querySelector('.cluster-label')?.textContent).toBe('Kernel reading');
     expect(controller.getState().renamed.get('cluster-1')).toBe('Kernel reading');
+  });
+
+  it('creates all active browser groups from one button', async () => {
+    const { controller, createGroup } = setupWithGroups();
+    await controller.analyze();
+    buttonWithText('Create all browser groups').click();
+    await vi.waitFor(() => expect(createGroup).toHaveBeenCalledWith([1, 2], 'Linux'));
+    await vi.waitFor(() =>
+      expect(document.getElementById('status')?.textContent).toContain('Created 1 browser group')
+    );
   });
 
   it('shows a permission message when tab URLs are unavailable', async () => {
