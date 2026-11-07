@@ -44,6 +44,20 @@ describe('clustering', () => {
     expect(result.clusters).toEqual([[0, 1, 2]]);
   });
 
+  it('supports clusters larger than two tabs', () => {
+    const result = clusterSimilarityMatrix(
+      matrixFor([
+        [1, 0.7, 0.65],
+        [0.7, 1, 0.6],
+        [0.65, 0.6, 1]
+      ]),
+      3,
+      0.5
+    );
+    expect(result.clusters).toEqual([[0, 1, 2]]);
+    expect(result.unclustered).toEqual([]);
+  });
+
   it('merges only exact pairs at threshold one', () => {
     const result = clusterSimilarityMatrix(
       matrixFor([
